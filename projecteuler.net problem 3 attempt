@@ -1,0 +1,13 @@
+maximum_range = int(input("Enter the maximum value:"))  # 600851475143
+prime_list = []
+for number in range(1, maximum_range+1):
+    if number > 1:  # prime number have a factor of 1
+        for x in range(2, number):
+            if number % 2 == 0:
+                break
+            else:
+                prime_list.append(number)
+
+print(prime_list)
+
+# note: this code is way too slow and repetitive
