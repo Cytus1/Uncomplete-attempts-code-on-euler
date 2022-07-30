@@ -11,4 +11,4 @@ for number in range(1, maximum_range + 1):
 
 print(prime_list)
 
-# this attempt was too slow for the target number.
+# this attempt was incomplete
