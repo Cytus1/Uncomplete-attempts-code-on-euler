@@ -1,38 +1,62 @@
 #   This is a underdeveloped code for question 4 on projecteuler.net
 
+#   find product of palindrome
+
 
 #   set the two product's range to 3 digit
-import random
-import logging
-
-logging.basicConfig(level=logging.DEBUG)
-
 product_range = []
+a_list = []
+b_list = []
+c_list = []
 
 
-def product(num):
-    minimum = 100
-    maximum = 999
-    result = 1
-    for i in range(num):
-        result *= random.randint(minimum, maximum)
-        product_range.append(result)
-        result = 1
+def product():
+    a = 500
+    b = 1000
+    c = 0
+    while a < 999:
+        a += 1
+        a_list.append(a)
+    while c <= 500:
+        b -= 1
+        c += 1
+        b_list.append(b)
+        if c == 500:
+            b += 2
+            b_list.append(b)
     return
 
 
-product(10)
-print(product_range)
+product()
+print(a_list)
+print(b_list)
+c_list = b_list
+print(c_list)
+
+#   times the product in list
+multiplied_ab = []
+multiplied_bc = []
+for i in range(len(a_list)):
+    multiplied_ab.append(a_list[i] * b_list[i])
+print(multiplied_ab)
+
+
+for i in range(len(b_list)):
+    multiplied_bc.append(b_list[i] * c_list[i])
+print(multiplied_bc)
 
 #   detect if it is a palindrome
-value = input("value: ")
+palindrome_list = []
+value = [multiplied_ab, multiplied_bc]
+
 reverse = value[:: -1]
+
+
 if value == reverse:
     print("value = palindrome")
-else:
-    print("value is not palindrome")
+    palindrome_list.append(value)
 
-print(value)
+print(palindrome_list)
 print(reverse)
 
 #   find the largest palindrome of those products
