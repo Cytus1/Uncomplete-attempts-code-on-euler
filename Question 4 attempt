@@ -4,7 +4,10 @@
 #   set the two product's range to 3 digit
 import random
 import logging
+
 logging.basicConfig(level=logging.DEBUG)
+
+product_range = []
 
 
 def product(num):
@@ -13,10 +16,13 @@ def product(num):
     result = 1
     for i in range(num):
         result *= random.randint(minimum, maximum)
-    return result
+        product_range.append(result)
+        result = 1
+    return
 
 
-logging.debug(product(1))
+product(10)
+print(product_range)
 
 #   detect if it is a palindrome
 value = input("value: ")
