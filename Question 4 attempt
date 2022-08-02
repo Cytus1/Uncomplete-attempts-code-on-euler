@@ -1,0 +1,32 @@
+#   This is a underdeveloped code for question 4 on projecteuler.net
+
+
+#   set the two product's range to 3 digit
+import random
+import logging
+logging.basicConfig(level=logging.DEBUG)
+
+
+def product(num):
+    minimum = 100
+    maximum = 999
+    result = 1
+    for i in range(num):
+        result *= random.randint(minimum, maximum)
+    return result
+
+
+logging.debug(product(1))
+
+#   detect if it is a palindrome
+value = input("value: ")
+reverse = value[:: -1]
+if value == reverse:
+    print("value = palindrome")
+else:
+    print("value is not palindrome")
+
+print(value)
+print(reverse)
+
+#   find the largest palindrome of those products
