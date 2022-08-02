@@ -22,8 +22,7 @@ def product():
         c += 1
         b_list.append(b)
         if c == 500:
-            b += 2
-            b_list.append(b)
+            pass
     return
 
 
@@ -52,4 +51,3 @@ def is_palindrome():
 is_palindrome()
 
 #   find the largest palindrome of those products
-
