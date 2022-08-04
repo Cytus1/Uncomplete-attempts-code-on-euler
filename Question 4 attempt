@@ -1,13 +1,10 @@
-#   This is a underdeveloped code for question 4 on projecteuler.net
-
 #   find product of palindrome
 
 
 #   set the two product's range to 3 digit
 product_range = []
-a_list = []
-b_list = []
-c_list = []
+first_list = []
+second_list = []
 
 
 def product():
@@ -16,38 +13,37 @@ def product():
     c = 0
     while a < 999:
         a += 1
-        a_list.append(a)
+        first_list.append(a)
     while c <= 500:
         b -= 1
         c += 1
-        b_list.append(b)
-        if c == 500:
-            pass
-    return
+        second_list.append(b)
 
 
 product()
-print(a_list)
-print(b_list)
 
 #   times the product in list
-multiplied_ab = []
-for i in range(len(a_list)):
-    multiplied_ab.append(a_list[i] * b_list[i])
-print(multiplied_ab)
+list_of_products = []
+
+for number_in_first_list in first_list:
+    for number_in_second_list in second_list:
+        list_of_products.append(number_in_first_list * number_in_second_list)
+
 
 #   detect if it is a palindrome
+palindrome_list = []
 
 
 def is_palindrome():
-    palindrome_list = []
-    value = [multiplied_ab]
-    reverse = value[:: -1]
+    value = []
+    for what_ever_is in list_of_products:
+        value.append(list_of_products)
+    reverse = value.reverse()
     if value == reverse:
-        print(palindrome_list)
         palindrome_list.append(value)
 
 
 is_palindrome()
+print(palindrome_list)
 
 #   find the largest palindrome of those products
