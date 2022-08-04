@@ -28,22 +28,25 @@ list_of_products = []
 for number_in_first_list in first_list:
     for number_in_second_list in second_list:
         list_of_products.append(number_in_first_list * number_in_second_list)
-
+list_of_products.sort()
 
 #   detect if it is a palindrome
 palindrome_list = []
+value = []
+reverse = []
 
 
 def is_palindrome():
-    value = []
-    for what_ever_is in list_of_products:
-        value.append(list_of_products)
+    for products in list_of_products:
+        value.append(products)
     reverse = value.reverse()
     if value == reverse:
         palindrome_list.append(value)
 
 
 is_palindrome()
+print(value)
 print(palindrome_list)
 
 #   find the largest palindrome of those products
+
