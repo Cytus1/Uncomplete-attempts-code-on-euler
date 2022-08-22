@@ -1,21 +1,23 @@
-#   define prime
+#   give count on prime
 import math
-prime_list = []
-not_prime_list = []
+prime_number_count = 0
+#   function to define prime
+while prime_number_count < 10001:
+    def find_factor(value):  # find factor
+        factors = []
+        for check_factor in range(1, int(math.sqrt(value)) + 1):
+            if value % check_factor == 0:
+                factors.append(check_factor)
+                factors.append(value // check_factor)
+        return factors
 
 
-def find_prime(x):
-    if x == 2:
-        prime_list.append(x)
-
-    range_for_divisor = math.floor(math.sqrt(x))
-    for check_factor in range(3, range_for_divisor + 1):
-        if x % check_factor == 0:
-            not_prime_list.append(check_factor)
-        if x % check_factor != 0:
-            prime_list.append(check_factor)
+    def is_prime(value):
+        return len(find_factor(value)) == 2
 
 
-find_prime(1000)
-print(not_prime_list)
-print(prime_list)
+    factors_find = find_factor(prime_number_count)
+    largest_prime_factor = 0
+    for factor in factors_find:
+        if is_prime(factor) and factor > largest_prime_factor:
+            largest_prime_factor = factor
