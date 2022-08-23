@@ -19,9 +19,6 @@ def is_prime(value):
 
 factors_find = find_factor(prime_number_count)
 largest_prime_factor = 0
-for factor in factors_find:
-    if is_prime(factor) and factor > largest_prime_factor:
-        largest_prime_factor = factor
 
 while prime_number_count < 10001:
     
