@@ -1,24 +1,28 @@
-#   give count on prime
-import math
-prime_number_count = 0
-#   function to define prime
+#   find factor, select prime, add to list, scan for 10001st prime
+
+factor_list = []
+prime_list = []
 
 
-def find_factor(value):  # find factor
-    factors = []
-    for check_factor in range(1, int(math.sqrt(value)) + 1):
-          if value % check_factor == 0:
-              factors.append(check_factor)
-              factors.append(value // check_factor)
-          return factors
+#   find factors
+def find_factors(value):
+    if value % 2 != 0:
+        for check_factor in range(1, value + 1):
+            if value % check_factor == 0:
+                factor_list.append(check_factor)
 
 
+#   detect prime, idea : the following then do len = 2
 def is_prime(value):
-    return len(find_factor(value)) == 2
+    for number in range(2, value):
+        if value % number == 0:
+            return False
+    return True
 
 
-factors_find = find_factor(prime_number_count)
-largest_prime_factor = 0
+find_factors(99)
 
-while prime_number_count < 10001:
-    
+for items in factor_list:
+    if is_prime(items):
+        prime_list.append(items)
+print(prime_list)
