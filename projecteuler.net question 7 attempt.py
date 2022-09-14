@@ -1,10 +1,7 @@
-#   find factor, select prime, add to list, scan for 10001st prime
-
 factor_list = []
 prime_list = []
+sort_list = []
 
-
-#   find factors
 def find_factors(value):
     if value % 2 != 0:
         for check_factor in range(1, value + 1):
@@ -12,17 +9,28 @@ def find_factors(value):
                 factor_list.append(check_factor)
 
 
-#   detect prime, idea : the following then do len = 2
 def is_prime(value):
     for number in range(2, value):
         if value % number == 0:
             return False
     return True
 
+i = 1
+prime_number_count = 0
+while prime_number_count < 10001:
+    find_factors(i)
+    i += 1
 
-find_factors(99)
+    for items in factor_list:
+        if is_prime(items):
+            prime_list.append(items)
 
-for items in factor_list:
-    if is_prime(items):
-        prime_list.append(items)
-print(prime_list)
+
+    for items in prime_list:
+        if items not in sort_list:
+            sort_list.append(items)
+            prime_number_count += 1
+            
+    print(prime_number_count)
+
+print(sort_list)
