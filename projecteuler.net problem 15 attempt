@@ -1,0 +1,15 @@
+from itertools import permutations
+
+combinations = permutations([1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ,0, 0, 0, 0, 0, 0, 0, 0, 0, 0])
+comb_array = []
+
+total_combination = 0
+
+for comb in list(combinations):
+    if comb not in comb_array:
+        comb_array.append(comb)
+        total_combination += 1
+
+print(total_combination)
+
+# This method was abandon due to it being too slow.
