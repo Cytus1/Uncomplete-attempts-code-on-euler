@@ -1,0 +1,31 @@
+"""
+Find the unique positive integer whose square has the form 1_2_3_4_5_6_7_8_9_0,
+where each “_” is a single digit.
+"""
+
+number = 1_2_3_4_5_6_7_8_9_0
+
+"""
+Below is version up to 6, optimaztion needed.
+"""
+
+i = 1
+i_square = i**2
+while i_square < 19293949596:
+    
+    str_i_square = str(i_square)
+    
+    if len(str_i_square) > 10:
+        
+        check_pass = 0
+        
+        if str_i_square[0] == "1":
+            for n in range(1, 6):
+                if str_i_square[n*2] == str(n+1):
+                    check_pass += 1
+        
+        if check_pass == 6 - 1:
+            print(f'Target num: {str_i_square}')
+    
+    i_square = i**2
+    i += 1
