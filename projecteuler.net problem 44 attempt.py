@@ -1,10 +1,12 @@
 def pentagonal_numbers (n = "oops"):
     return int(n*(3*n-1)/2)
 
-pentagonal_n_list = [num for num in range(1, 101)]
+pentagonal_n_list = [num for num in range(1, 11)]
 pentagonal_n_list = [pentagonal_numbers(i) for i in pentagonal_n_list]
 
 pen_list_range = len(pentagonal_n_list) - 1
+
+print([num for num in pentagonal_n_list])
 
 for index in range(pen_list_range):
     for scan_index in range(pen_list_range):
@@ -15,4 +17,10 @@ for index in range(pen_list_range):
             if sub_diff in pentagonal_n_list:
                 print(pentagonal_n_list[index])
                 exit()
+                
+    """
+    
+    pr- edit the range for each iteration
+    
+    """
                 
